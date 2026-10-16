@@ -256,15 +256,15 @@ func handle_tap(pos: Vector2) -> void:
 	for i in range(towers.size()):
 		var p: Vector2 = PADS[int(towers[i].pad)]
 		if p.distance_to(pos) <= 25:
-			if selected_tower >= 0 and selected_tower != i:
+						if selected_tower >= 0 and selected_tower != i:
 				var a: String = towers[selected_tower].kind
 				var b: String = towers[i].kind
 				if a != b and towers[selected_tower].level >= 1 and towers[i].level >= 1:
 					fuse_pair(selected_tower, i)
 				else:
-				selected_tower = i
-				message = "%s tower selected. Select a different tower to fuse." % towers[i].kind
-				message_timer = 2.4
+					selected_tower = i
+					message = "%s tower selected. Select a different tower to fuse." % towers[i].kind
+					message_timer = 2.4
 			else:
 				selected_tower = i
 				message = "%s tower selected. Choose a second tower to fuse." % towers[i].kind
